@@ -21,3 +21,13 @@
        margin-bottom: 60px;
 
       }
+      .clear-button{
+        background-color: rgb(183, 190, 187);
+        color:white;
+        padding: 12px 20px;
+        margin-left :10px;
+        border:none;
+        border-radius: 10px;
+        font-size: 15px;
+        cursor: pointer;
+      }

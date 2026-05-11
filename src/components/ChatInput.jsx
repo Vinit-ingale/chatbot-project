@@ -60,6 +60,12 @@
       setIsLoading(false);
       }
 
+      function clearMessage (){
+         setInputText('')
+         setChatMessages([])
+         localStorage.setItem('messages',JSON.stringify(chatMessages))
+      }
+
       const time = dayjs().format('hh:mm A')
        const handleKeyDown= ()=>{
         if(event.key==='Enter'){
@@ -89,6 +95,11 @@
           onClick={sendMessage}  
           className="send-button"
           >Send</button>
+          <button 
+          onClick={clearMessage}
+          className="clear-button"
+          >Clear</button>
         </div>
+        
     );
    }
