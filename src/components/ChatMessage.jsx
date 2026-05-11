@@ -1,7 +1,9 @@
  import RobotProfileImage from '../assets/robot.png'
 import UserProfileImage from '../assets/user.png'
+import ChatMessages from './ChatMessages';
 import './ChatMessages.css'
 import dayjs from 'dayjs';
+
  
  export function ChatMessage({message,sender,time}){
     //const message=props.message;
@@ -16,6 +18,7 @@ import dayjs from 'dayjs';
         )
      }
         */
+ 
 
     return (
        <div className={sender === 'user'? 'chat-message-user':'chat-message-robot'}>
