@@ -1,7 +1,9 @@
+ import dayjs from 'dayjs';
  import { useState } from 'react';
  import { Chatbot } from 'supersimpledev'
  import LoadingSpinner from '../assets/loading-spinner.gif'
  import './ChatInput.css'
+
  
  export function ChatInput({chatMessages,setChatMessages}){
       const [inputText,setInputText]=useState('');
@@ -24,7 +26,8 @@
         {
           sender:'user',
           message:inputText,
-          id:crypto.randomUUID()
+          id:crypto.randomUUID(),
+          time: dayjs().valueOf()
         }
       ]
 
@@ -46,7 +49,8 @@
         {
           sender:'robot',
           message:response,
-          id:crypto.randomUUID()
+          id:crypto.randomUUID(),
+          time: dayjs().valueOf()
         }
       ]);
 
@@ -56,10 +60,12 @@
       setIsLoading(false);
       }
 
+      const time = dayjs().format('hh:mm A')
        const handleKeyDown= ()=>{
         if(event.key==='Enter'){
          
           sendMessage()
+          console.log(time)
         }
         if(event.key === 'Escape'){
     
