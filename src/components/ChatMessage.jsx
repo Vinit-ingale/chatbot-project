@@ -22,17 +22,19 @@ import dayjs from 'dayjs';
         { sender === 'robot' && (
           <img src={RobotProfileImage} className="chat-message-profile" />
         )}
+   
         <div className="chat-message-text"> 
           {message} 
-          </div>
-       { sender === 'user' &&  (
-        <img src={UserProfileImage} className="chat-message-profile"/>
-       )}
-       {
+           {
         <div className='chat-message-time'>
             {dayjs(time).format('h:mma')}
           </div>
        }
+          </div>
+       { sender === 'user' &&  (
+        <img src={UserProfileImage} className="chat-message-profile"/>
+       )}
+     
        
        
        </div>
